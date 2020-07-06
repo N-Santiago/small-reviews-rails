@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# The Small Reviews Rails App
+This Rails project is inspired by own movie blog The Small Reviews with the intention of move forward in the Flatiron School curriculum and turn a social media blog into a fun to use web app with a community of movie and pop culture lovers. 
 
-Things you may want to cover:
+# Setup
+These are the steps to get the app up and running:
 
-* Ruby version
+Step 1. Clone this repository Make a local copy of this project and move into the directory. This project requires Ruby and RubyGems.
 
-* System dependencies
+    $ git clone git@github.com:https://github.com/N-Santiago/small-reviews-rails.git 
 
-* Configuration
+# Usage
+Sign up your Small Reviews User Account and turn from a Small Rookie to a Huge Critic by submitting your own Small Reviews. 
 
-* Database creation
+# Contributing
+Bug reports and pull requests are welcome on GitHub at. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* Database initialization
+# License
+The gem is available as open source under the terms of the MIT License.
 
-* How to run the test suite
+# Code of Conduct
+Everyone interacting in the Breweries project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+© 2020 Small Reviews 
