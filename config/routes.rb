@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
   root 'welcome#home'
   get '/genres', to: 'categories#index'
   get '/genres/:id', to: 'categories#show'
