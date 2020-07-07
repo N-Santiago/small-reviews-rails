@@ -4,8 +4,9 @@
 <br>
 <ul>
   <%Review.all.each do |review|%>
-    <p><li><strong><%= link_to review.title, review_path(review.id) %></strong></p> 
-    <p><small>Submitted by: <%= review.user.username %></small></p>
+    <p><li><strong><%= link_to review.title, review_path(review.id) %></strong><br> 
+    <small>Genre: <%= link_to review.category.name, "genres/#{review.category_id}" %></small> |
+    <small>Submitted by: <%= review.user.username %></small></p>
       <p><%= review.content %></p>
       <small>Created: <%=review.created_at %></small> | <small>Updated: <%=review.updated_at %></small>
   </li>

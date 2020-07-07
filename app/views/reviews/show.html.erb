@@ -3,7 +3,12 @@
   <%= link_to "Edit Review", edit_review_path %>
   <%= link_to 'Delete Review',  @review,  method: :delete, data: { confirm: 'Are you sure?' } %> 
 <% end %> 
+<br>
+<br>
 <h2><%= @review.title %></h2>
+<small>Genre: <%= link_to @review.category.name, "genres/#{@review.category_id}" %></small> |
+<small>Submitted by: <%= @review.user.username %></small><br>
+<br>
 <p><%= @review.content %></p>
 <small>Created: <%= @review.created_at %></small> <small>Updated: <%= @review.updated_at %></small>
 <br>
