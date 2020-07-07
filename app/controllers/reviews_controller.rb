@@ -1,3 +1,4 @@
+require 'pry'
 class ReviewsController < ApplicationController
     before_action :set_review, only: [:show, :edit, :update, :destroy]
     
@@ -10,6 +11,7 @@ class ReviewsController < ApplicationController
     end
   
     def create
+      binding.pry
       @review = Review.new(review_params)
       @review.user_id = current_user.id
       if @review.save
@@ -39,7 +41,7 @@ class ReviewsController < ApplicationController
     def destroy
       #authorize @review
       @review.destroy
-      redirect_to reviews_path, :alert => "We'll miss that review."    
+      redirect_to reviews_path   
     end
   
     private
