@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
     end
   
     def edit
-       #authorize @review
+       authorize @review
     end
   
     def update
@@ -36,7 +36,7 @@ class ReviewsController < ApplicationController
     end
   
     def destroy
-      #authorize @review
+      authorize @review
       @review.destroy
       redirect_to reviews_path   
     end
