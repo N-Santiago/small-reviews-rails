@@ -1,24 +1,10 @@
-<p id="notice"><%= notice %></p>
+<h1>Small Review by: <%= @review.user.username %></h1>
+<% if @review.user_id %>
+  <%= link_to "Edit Review", edit_review_path %>
+  <%= link_to 'Delete Review',  @review,  method: :delete, data: { confirm: 'Are you sure?' } %> 
+<% end %> 
+<h2><%= @review.title %></h2>
+<p><%= @review.content %></p>
+<small>Created: <%= @review.created_at %></small> <small>Updated: <%= @review.updated_at %></small>
 
-<p>
-  <strong>Title:</strong>
-  <%= @review.title %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @review.content %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @review.user_id %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @review.category_id %>
-</p>
-
-<%= link_to 'Edit', edit_review_path(@review) %> |
-<%= link_to 'Back', reviews_path %>
+<%= link_to 'Back To All Reviews', reviews_path %>

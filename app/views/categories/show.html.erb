@@ -1,9 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<h1>Genre: <%= @category.name %></h1>
+<br>
+<ul>
+<% @category.reviews.each do |review| %>
+  <p><li><strong><%= link_to review.title, review_path(review) %></strong></a> 
+      <p><%=review.content %></p>
+      <small>Created: <%=review.created_at %></small> <small>Updated: <%=review.updated_at %></small>
+  </li>
+  <br>
+  <%end%>
+</ul></p>
