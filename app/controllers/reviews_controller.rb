@@ -11,13 +11,11 @@ class ReviewsController < ApplicationController
     end
   
     def create
-      binding.pry
       @review = Review.new(review_params)
       @review.user_id = current_user.id
       if @review.save
         redirect_to review_path(@review)
       else
-        error_messages(@review)
         render 'new' 
       end
     end
@@ -32,8 +30,7 @@ class ReviewsController < ApplicationController
     def update
       if @review.update(review_params)
         redirect_to review_path(@review)
-      else 
-        error_messages(@review) 
+      else  
         render 'edit'
       end  
     end
