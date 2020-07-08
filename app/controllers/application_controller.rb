@@ -14,7 +14,11 @@ class ApplicationController < ActionController::Base
     def user_not_authorized
       flash[:alert] = "Ooops sorry. You don't have access to this."
       redirect_to (request.referrer || root_path)
-    end   
+    end
+    
+    def set_review
+      @review = Review.find_by(id: params[:id])
+    end 
 
     protected
 

@@ -43,10 +43,6 @@ class ReviewsController < ApplicationController
   
     private
   
-      def set_review
-        @review = Review.find_by(id: params[:id])
-      end 
-  
       def review_params
         params.require(:review).permit(:title, :content, :category_id)
       end
