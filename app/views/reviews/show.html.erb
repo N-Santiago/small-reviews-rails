@@ -1,8 +1,10 @@
 <h1>Small Review by: <%= @review.user.username %></h1>
 <% if @review.user_id %>
-  <%= link_to "Edit Review", edit_review_path %>
+  <%= link_to "Edit Review", edit_review_path %> |
   <%= link_to 'Delete Review',  @review,  method: :delete, data: { confirm: 'Are you sure?' } %> 
-<% end %> 
+<% end %>
+<br>
+<%= link_to 'Back To All Reviews', reviews_path %> 
 <br>
 <br>
 <h2><%= @review.title %></h2>
@@ -13,4 +15,7 @@
 <small>Created: <%= @review.created_at %></small> <small>Updated: <%= @review.updated_at %></small>
 <br>
 <br>
-<%= link_to 'Back To All Reviews', reviews_path %>
+<h5>Comments</h5>
+<%= render partial: 'reviews/comment', collection: @review.comments.reverse %>
+
+
