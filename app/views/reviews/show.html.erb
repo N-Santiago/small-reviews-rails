@@ -15,7 +15,10 @@
 <small>Created: <%= @review.created_at %></small> <small>Updated: <%= @review.updated_at %></small>
 <br>
 <br>
-<h5>Comments</h5>
+<%= render partial: 'comments/form' %>
+<br>
+<% if @review.comments.present? %>
+<h5>Comments:</h5>
 <%= render partial: 'reviews/comment', collection: @review.comments.reverse %>
-
+<% end %>
 

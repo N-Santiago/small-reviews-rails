@@ -8,6 +8,8 @@ class ReviewsController < ApplicationController
   
     def new
       @review = Review.new
+      @comment = Comment.new
+      @comment.review_id = @review.id 
     end
   
     def create
@@ -21,6 +23,7 @@ class ReviewsController < ApplicationController
     end
   
     def show
+      @comment = Comment.new 
     end
   
     def edit
@@ -42,6 +45,10 @@ class ReviewsController < ApplicationController
     end
   
     private
+
+      def set_review
+        @review = Review.find_by(id: params[:id])
+    end 
   
       def review_params
         params.require(:review).permit(:title, :content, :category_id)

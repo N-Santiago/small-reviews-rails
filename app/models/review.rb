@@ -1,3 +1,4 @@
+require 'pry'
 class Review < ApplicationRecord
     belongs_to :user
     belongs_to :category
@@ -6,5 +7,6 @@ class Review < ApplicationRecord
     # to the specific review in mention get deleted if the post does.
     has_many :users, through: :comments
     validates :title, presence: true, length: { in: 3..30 }
-    validates :content, presence: true, length: { maximum: 250 } 
+    validates :content, presence: true, length: { maximum: 250 }
+    
 end
