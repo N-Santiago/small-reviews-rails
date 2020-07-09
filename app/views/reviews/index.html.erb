@@ -1,6 +1,10 @@
 <h1>Small Reviews</h1>
 <br>
-<%= link_to "Submit New Review", new_review_path %>
+<% if user_signed_in? %>
+  <%= link_to "Submit New Review", new_review_path %>
+<% else %>
+  <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
+<% end %>
 <br>
 <ul>
   <%Review.all.each do |review|%>
