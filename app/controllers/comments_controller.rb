@@ -1,6 +1,7 @@
 require 'pry'
 class CommentsController < ApplicationController
     before_action :get_comment, only: [:edit, :update, :destroy]
+    before_action :authorize!, only: [:edit, :destroy]
     before_action :set_comments, only: [:edit, :update, :destroy]
 
     def new
@@ -41,6 +42,10 @@ class CommentsController < ApplicationController
         
     def comment_params
         params.require(:comment).permit(:content, :review_id)
+    end 
+
+    def authorize! 
+        authorize @comment 
     end 
 
 end

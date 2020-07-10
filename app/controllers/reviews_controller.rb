@@ -1,6 +1,7 @@
 require 'pry'
 class ReviewsController < ApplicationController
     before_action :set_review, only: [:show, :edit, :update, :destroy]
+    before_action :authorize!, only: [:edit, :destroy]
     
     def index
       @reviews = Review.all
@@ -27,7 +28,6 @@ class ReviewsController < ApplicationController
     end
   
     def edit
-       authorize @review
     end
   
     def update
@@ -39,7 +39,6 @@ class ReviewsController < ApplicationController
     end
   
     def destroy
-      authorize @review
       @review.destroy
       redirect_to reviews_path   
     end
@@ -53,4 +52,8 @@ class ReviewsController < ApplicationController
       def review_params
         params.require(:review).permit(:title, :content, :category_id)
       end
+
+      def authorize! 
+        authorize @review 
+    end 
 end

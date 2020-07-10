@@ -16,4 +16,15 @@ class User < ActiveRecord::Base
         user.password = Devise.friendly_token[0,20]
       end
   end
+
+  def wrote_this(obj)
+    if obj.class == Review && obj.user_id == self.id 
+      true
+    elsif obj.class == Comment && obj.user_id == self.id 
+      true
+    else
+      false
+    end
+  end
+
 end
