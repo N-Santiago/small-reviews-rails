@@ -15,7 +15,9 @@
 <small>Created: <%= @review.created_at %></small> <small>Updated: <%= @review.updated_at %></small>
 <br>
 <br>
+<% if user_signed_in? %>
 <%= render partial: 'comments/form' %>
+<% end %>
 <br>
 <% if @review.comments.present? %>
 <h5>Comments:</h5>
