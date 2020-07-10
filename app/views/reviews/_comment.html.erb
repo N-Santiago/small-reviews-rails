@@ -1,5 +1,6 @@
 <div>
   <p><strong><%= comment.user.username %></strong><br>
   <%= comment.content %></p>
-
+  <%= link_to 'edit', edit_review_comment_path(@review, comment) %> 
+  <%= link_to 'delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>

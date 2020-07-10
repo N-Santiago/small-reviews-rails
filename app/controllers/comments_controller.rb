@@ -1,9 +1,7 @@
 require 'pry'
 class CommentsController < ApplicationController
-    before_action :set_comments, only: [:show, :edit, :update, :destroy]
-
-    def show
-    end 
+    before_action :get_comment, only: [:edit, :update, :destroy]
+    before_action :set_comments, only: [:edit, :update, :destroy]
 
     def new
         @comment = Comment.new 
@@ -21,21 +19,26 @@ class CommentsController < ApplicationController
     end 
 
     def update
-        @comment = @review.comments.update(comment_params)
-        redirect_to review_path(@review.comments)
+        @comment.update(comment_params)
+        redirect_to review_path(@review)
     end 
   
     def destroy
         @comment.destroy
-        redirect_to post_path(@post)
+        redirect_to review_path(@review)
     end
 
     private
 
-    def set_comments
-        @comment = @review.comments.find(params[:id])
+    def get_comment
+        @comment = Comment.find_by(id: params[:id])
     end 
 
+    def set_comments
+        @review = @comment.review 
+        @comments = @review.comments.find_by(id: params[:id])
+    end 
+        
     def comment_params
         params.require(:comment).permit(:content, :review_id)
     end 
