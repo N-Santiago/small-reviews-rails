@@ -9,4 +9,5 @@ class Review < ApplicationRecord
     validates :title, presence: true, length: { in: 3..30 }
     validates :content, presence: true, length: { maximum: 250 }
     default_scope { order(created_at: :desc)}
+    #by default, the reviews will be displayed from newest to oldest.
 end

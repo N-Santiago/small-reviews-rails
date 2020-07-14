@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
       @review = Review.new
       @comment = Comment.new
       @comment.review_id = @review.id 
+      #We need to declare the comments in the new action. 
     end
   
     def create
@@ -25,6 +26,7 @@ class ReviewsController < ApplicationController
   
     def show
       @comment = Comment.new 
+      #We also need to declare the new comment in the show action. 
     end
   
     def edit
@@ -54,6 +56,6 @@ class ReviewsController < ApplicationController
       end
 
       def authorize! 
-        authorize @review 
+        authorize @review #authorize method using the Pundit gem
     end 
 end

@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
         @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
         @comment.review_id = params[:review_id]
+        #Declare the review id. 
         @comment.save
         redirect_to review_path(@comment.review)
     end
@@ -29,7 +30,7 @@ class CommentsController < ApplicationController
         redirect_to review_path(@review)
     end
 
-    private
+    private #Very important helpers.
 
     def get_comment
         @comment = Comment.find_by(id: params[:id])
@@ -45,7 +46,7 @@ class CommentsController < ApplicationController
     end 
 
     def authorize! 
-        authorize @comment 
+        authorize @comment #authorize method using the Pundit gem
     end 
 
 end
