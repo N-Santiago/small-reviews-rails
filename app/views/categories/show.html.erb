@@ -1,5 +1,8 @@
 <h1>Genre: <%= @category.name %></h1>
 <br>
+<%= link_to "Back To All Reviews", reviews_path %> | <%= link_to "Back To All Genres", "/genres" %>
+<br>
+<br>
 <ul>
 <% @category.reviews.each do |review| %>
   <p><li><strong><%= link_to review.title, review_path(review) %></strong></a> 
