@@ -12,7 +12,7 @@
 <small>Submitted by: <%= @review.user.username %></small><br>
 <br>
 <p><%= @review.content %></p>
-<small>Created: <%= @review.created_at %></small> <small>Updated: <%= @review.updated_at %></small>
+<small>Created: <%= @review.time_lapse(@review.created_at) %></small> | <small>Updated: <%= @review.time_lapse(@review.updated_at) %></small>
 <br>
 <br>
 <% if user_signed_in? %>
