@@ -1,0 +1,10 @@
+<h1>Reviewers</h1>
+<br>
+<%= link_to 'Back To All Reviews', reviews_path %> | <%= link_to "Search By Genre", "/genres" %>
+<br>
+<br>
+<ul>
+  <% User.all.each do |user| %>
+    <p><li><strong><%= link_to user.username, user_path(user.id) %></strong></li></p>
+  <% end %>
+</ul> 
