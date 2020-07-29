@@ -15,7 +15,10 @@
       <% if review.comments.present? %>
       <small><%= review.comments.count %> <%= review.comments.count == 1 ? "Comment" : "Comments" %></small></br> 
       <% end %>
-      <small>Created: <%=review.time_lapse(review.created_at) %></small> | <small>Updated: <%=review.time_lapse(review.updated_at) %></small>
+      <small>Created: <%=review.time_lapse(review.created_at) %></small> 
+      <% if review.updated_at != review.created_at %>
+      | <small>Updated: <%=review.time_lapse(review.updated_at) %></small>
+      <% end %>
   </li>
   <%end%>
 </ul> 
