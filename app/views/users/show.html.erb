@@ -1,12 +1,13 @@
 <h1>Reviewer: <%= @user.username %></h1>
+<h2>Reviews: <%= @user.reviews.count %> | Comments: <%= @user.comments.count %></h2>
 <br>
-<%= link_to "Back To All Reviews", reviews_path %> | <%= link_to "Back To All Genres", "/genres" %>
+<%= link_to "Back To All Reviews", reviews_path %> | <%= link_to "Back To All Genres", "/genres" %> | 
 <br>
 <br>
 <ul>
 <% @user.reviews.each do |review| %>
   <p><li><strong><%= link_to review.title, review_path(review) %></strong></br> 
-  <small>Genre: <%= link_to review.category.name, "users/#{user.user_id}/genres/#{review.category.id}" %></small></p>
+  <small>Genre: <%= link_to review.category.name, "#{@user.id}/genres/#{review.category.id}" %></small></p>
     <p><%= review.content %></p>
     <% if review.comments.present? %>
     <small><%= review.comments.count %> <%= review.comments.count == 1 ? "Comment" : "Comments" %></small></br> 
