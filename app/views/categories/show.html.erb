@@ -5,10 +5,11 @@
 <br>
 <ul>
 <% @category.reviews.each do |review| %>
-  <p><li><strong><%= link_to review.title, review_path(review) %></strong></a> 
-      <p><%=review.content %></p>
-      <small>Created: <%=review.created_at %></small> <small>Updated: <%=review.updated_at %></small>
+  <p><li><strong><%= link_to review.title, review_path(review) %></strong></br> 
+  <small>Submitted by: <%= link_to review.user.username, user_path(review.user.id) %></small>
+  <p><%=review.content %></p>
+  <small>Created: <%=review.created_at %></small> <small>Updated: <%=review.updated_at %></small>
   </li>
   <br>
-  <%end%>
+<%end%>
 </ul></p>
