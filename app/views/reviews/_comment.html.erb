@@ -1,5 +1,5 @@
 <div>
-  <p><strong><%= comment.user.username %></strong><br>
+  <p><strong><%= link_to comment.user.username, user_path(comment.user.id) %></strong><br>
   <%= comment.content %></p>
   <small>Created: <%= comment.time_lapse(comment.created_at) %></small> 
   <% if comment.updated_at != comment.created_at %>
@@ -9,4 +9,4 @@
   <%= link_to 'edit', edit_review_comment_path(@review, comment) %> |
   <%= link_to 'delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
-</div>
+</div></br>
