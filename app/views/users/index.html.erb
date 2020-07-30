@@ -1,6 +1,10 @@
 <h1>Reviewers</h1>
 <br>
-<%= link_to 'Back To All Reviews', reviews_path %> | <%= link_to "Search By Genre", "/genres" %>
+<% if user_signed_in? %>
+  <%= link_to "Submit New Review", new_review_path %>
+<% else %>
+  <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
+<% end %>
 <br>
 <br>
 <ul>
