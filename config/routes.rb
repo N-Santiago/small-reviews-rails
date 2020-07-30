@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get '/genres', to: 'categories#index'
   get '/genres/:id', to: 'categories#show'
+  get 'reviews/genres/:id', to: 'categories#show'
   get 'users/:id/genres/:id', to: 'users#category'
   resources :reviews
   resources :comments, only: [:show, :new, :create, :edit, :update, :destroy]
