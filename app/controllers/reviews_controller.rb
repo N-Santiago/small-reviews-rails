@@ -4,7 +4,11 @@ class ReviewsController < ApplicationController
     before_action :authorize!, only: [:edit, :destroy]
     
     def index
-      @reviews = Review.all
+      if params[:search]
+        @reviews = Review.where("title like ?", "%#{params[:search]}%") 
+      else
+        @reviews = Review.all
+      end
     end
   
     def new
@@ -15,12 +19,12 @@ class ReviewsController < ApplicationController
     end
   
     def create
-      @review = Review.new(review_params)
-      @review.user_id = current_user.id
+      @review = current_user.reviews.new(review_params)
+
       if @review.save
         redirect_to review_path(@review)
       else
-        render 'new' 
+        render 'new'
       end
     end
   
@@ -52,7 +56,7 @@ class ReviewsController < ApplicationController
     end 
   
       def review_params
-        params.require(:review).permit(:title, :content, :category_id)
+        params.require(:review).permit(:title, :content, :category_id, :search)
       end
 
       def authorize! 

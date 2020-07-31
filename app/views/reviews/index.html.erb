@@ -1,4 +1,11 @@
 <h1>Small Reviews</h1>
+<div>
+<%= form_tag reviews_path, method: 'get' do %>
+  <%= label_tag(:search, "Search for:") %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag("Search") %>
+<% end %>
+</div>
 <br>
 <% if user_signed_in? %>
   <%= link_to "Submit New Review", new_review_path %>
@@ -7,7 +14,7 @@
 <% end %>
 <br>
 <ul>
-  <%Review.all.each do |review|%>
+  <% @reviews.all.each do |review| %>
     <p><li><strong><%= link_to review.title, review_path(review.id) %></strong><br> 
     <small>Genre: <%= link_to review.category.name, "genres/#{review.category_id}" %></small> |
     <small>Submitted by: <%= link_to review.user.username, user_path(review.user.id) %></small></p>
@@ -21,4 +28,5 @@
       <% end %>
   </li>
   <%end%>
-</ul> 
+</ul>
+
