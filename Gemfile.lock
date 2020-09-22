@@ -168,10 +168,14 @@ GEM
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    pry (0.13.1-java)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+      spoon (~> 0.0)
     public_suffix (4.0.5)
-    puma (4.3.5)
+    puma (5.0.0)
       nio4r (~> 2.0)
-    puma (4.3.5-java)
+    puma (5.0.0-java)
       nio4r (~> 2.0)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
@@ -230,6 +234,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    spoon (0.0.6)
+      ffi
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -299,7 +305,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   pry
-  puma (~> 4.1)
+  puma (~> 5.0)
   pundit
   rails (~> 6.0.3, >= 6.0.3.2)
   sass-rails (>= 6)
