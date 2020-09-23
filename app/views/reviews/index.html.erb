@@ -17,7 +17,11 @@
   <% @reviews.all.each do |review| %>
     <p><li><strong><%= link_to review.title, review_path(review.id) %></strong><br> 
     <small>Genre: <%= link_to review.category.name, "genres/#{review.category_id}" %></small> |
-    <small>Submitted by: <%= link_to review.user.username, user_path(review.user.id) %></small></p>
+    <small>Submitted by: <%= link_to review.user.username, user_path(review.user.id) %></small><br>
+    <small>Created: <%=review.time_lapse(review.created_at) %></small> 
+      <% if review.updated_at != review.created_at %>
+      | <small>Updated: <%=review.time_lapse(review.updated_at) %></small>
+      <% end %></p>
       <p><%= review.content %></p>
       <% if review.comments.present? %>
       <small><%= review.comments.count %> <%= review.comments.count == 1 ? "Comment" : "Comments" %></small></br> 
