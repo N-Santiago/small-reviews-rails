@@ -20,5 +20,9 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^4.1.0"
+  },
+  "script": {
+    "preinstall": "{{npx npm-force-resolutions}}",
+    "resolutions": "{{glob-parent ^6.0.1}}" 
   }
 }
