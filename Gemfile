@@ -33,7 +33,7 @@ gem 'mini_racer'
 gem 'devise'
 
 gem 'omniauth'
-
+gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-facebook'
 
 gem 'pundit'
