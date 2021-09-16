@@ -23,6 +23,6 @@
   },
   "script": {
     "preinstall": "{{npx npm-force-resolutions}}",
-    "resolutions": "{{glob-parent ^6.0.1}}" 
+    "resolutions": "{{glob-parent ^6.0.1}}"
   }
 }
