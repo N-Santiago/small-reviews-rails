@@ -44,7 +44,6 @@ nav {
     /* For tablets: */
     .content {
       width: 80%;
-      padding: 0;
     }
 }
   
@@ -52,6 +51,7 @@ nav {
     /* For mobile phones: */
     .content {
       width: 100%;
+      padding: 0
     }
 }
 
@@ -74,8 +74,14 @@ footer {
 }    
 
 .image {
-    justify-content: center;
-    padding: 20px
+    padding: 20px;
+}
+
+@media (max-width:1024px) {
+    /* For tablets: */
+    .image {
+        padding: 5px;
+    }
 }
 
 
