@@ -1,4 +1,12 @@
-<h1>Welcome to Small Reviews</h1>
-<div class='subtitle'>The place to share your big love for movies and series. 🎥🎬</div>
-<br>
-<%= link_to "Let's see some reviews", reviews_path %> | <%= link_to "Love a particular genre?", "/genres" %> | <%= link_to "Check out the film loving community", users_path %>
+<div class="welcome">
+    <h1>Welcome to Small Reviews</h1>
+    <div class='subtitle'>The place to share your big love for movies and series. 🎥🎬</div>
+</div><br />
+<nav>
+    <%= link_to "Let's see some reviews", reviews_path %> | 
+    <%= link_to "Love a particular genre?", "/genres" %> | 
+    <%= link_to "Check out the film loving community", users_path %>
+</nav>
+<div class="image">
+    <%= image_tag("smallreview.gif") %>
+</div>

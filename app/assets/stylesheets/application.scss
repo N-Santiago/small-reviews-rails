@@ -20,7 +20,6 @@ h1 {
 	font-variant: normal; 
 	font-weight: 700; 
 	line-height: 26.4px; 
-	// background-image: url(https://i.pinimg.com/originals/61/b4/4c/61b44cb773bb64b3f9d2752ba3410d5b.gif);
 	background-image: url("images/glitch.gif");
 	background-size: cover;
 	color: transparent;
@@ -28,18 +27,13 @@ h1 {
 	-webkit-background-clip: text;
 }
 
-
-.subtitle { 
-    font-family: "Permanent Marker"; 
-    font-size: 16px; 
-    font-style: normal; 
-    font-variant: normal; 
-    font-weight: 400; 
-    line-height: 15.4px; 
-}    
+nav {
+    background-color: rgb(250, 250, 250);
+    padding: 10px;
+    border-bottom-style: solid;
+}
 
 .content {
-    background: white;
     margin: auto; 
     padding: 20px;
     width: 60%;
@@ -69,6 +63,21 @@ footer {
     left: 0px; 
     text-align: center; 
 }
+
+.subtitle { 
+    font-family: "Permanent Marker"; 
+    font-size: 16px; 
+    font-style: normal; 
+    font-variant: normal; 
+    font-weight: 400; 
+    line-height: 15.4px; 
+}    
+
+.image {
+    justify-content: center;
+    padding: 20px
+}
+
 
 
 
