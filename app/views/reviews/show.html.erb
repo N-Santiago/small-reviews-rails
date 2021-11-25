@@ -1,16 +1,16 @@
-<h1>Small Review by: <%= @review.user.username %></h1>
-<% if user_signed_in? && (current_user.wrote_this(@review) || current_user.admin) %>
-  <%= link_to "Edit Review", edit_review_path %> |
-  <%= link_to 'Delete Review',  @review,  method: :delete, data: { confirm: 'Are you sure?' } %> 
-<% end %>
-<br>
-<% if user_signed_in? %>
-  <%= link_to "Submit New Review", new_review_path %>
-<% else %>
-  <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
-<% end %>
-<br>
-<br>
+<div class='review-header'>
+  <h1>Small Review by: <%= @review.user.username %></h1>
+  <% if user_signed_in? && (current_user.wrote_this(@review) || current_user.admin) %>
+    <%= link_to "Edit Review", edit_review_path %> |
+    <%= link_to 'Delete Review',  @review,  method: :delete, data: { confirm: 'Are you sure?' } %> 
+  <% end %>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to "Submit New Review", new_review_path %>
+  <% else %>
+    <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
+  <% end %>
+</div><br/>
 <h2><%= @review.title %></h2>
 <small>Genre: <%= link_to @review.category.name, "genres/#{@review.category_id}" %></small> |
 <small>Submitted by: <%= link_to @review.user.username, user_path(@review.user.id) %></small><br>

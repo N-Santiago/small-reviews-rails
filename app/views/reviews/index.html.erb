@@ -1,18 +1,18 @@
-<h1>All Reviews</h1>
-<div>
-<%= form_tag reviews_path, method: 'get' do %>
-  <%= label_tag(:search, "Search for:") %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag("Search") %>
-<% end %>
+<div class='review-header'>
+  <h1>All Reviews</h1>
+  <%= form_tag reviews_path, method: 'get' do %>
+    <%= label_tag(:search, "Search for:") %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag("Search") %>
+  <% end %>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to "Submit New Review", new_review_path %>
+  <% else %>
+    <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
+  <% end %>
+  <br>
 </div>
-<br>
-<% if user_signed_in? %>
-  <%= link_to "Submit New Review", new_review_path %>
-<% else %>
-  <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
-<% end %>
-<br>
 <ul>
   <% @reviews.all.each do |review| %>
     <p><li><strong><%= link_to review.title, review_path(review.id) %></strong><br> 
