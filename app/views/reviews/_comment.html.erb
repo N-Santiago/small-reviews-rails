@@ -1,4 +1,4 @@
-<div>
+<div class='comment'>
   <p><strong><%= link_to comment.user.username, user_path(comment.user.id) %></strong><br>
   <%= comment.content %></p>
   <small>Created: <%= comment.time_lapse(comment.created_at) %></small> 

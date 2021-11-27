@@ -27,16 +27,46 @@ h1, h2 {
 	-webkit-background-clip: text;
 }
 
-nav, .review-header {
+nav {
     padding: 0px 0px 5px 5px;
     border-bottom-style: solid;
 }
 
-.content {
+.review-header {
+    background-color: rgb(243, 241, 241);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
     margin: auto; 
-    padding: 20px;
+    margin-bottom: 25px;
+    padding: 0px;
     width: 60%;
     height: 100%;
+}
+
+// .content {
+//     min-height: 100%;
+// 	margin: 0 auto -50px;
+// }
+
+.review {
+    background-color:rgb(218, 234, 240);
+    padding-left: 5px;
+    border-radius: 8px;
+}
+
+.comment {
+    border-top-style: groove;
+    border-top-color: lightskyblue;
+    border-bottom-style: groove;
+    border-bottom-color: lightskyblue;
 }
 
 @media only screen and (max-width:800px) {
@@ -56,11 +86,12 @@ nav, .review-header {
 
 footer {
     width: 100%;
-    height: 28px;
+    height: 0px;
     position: absolute;
     bottom: 0px; 
     left: 0px; 
     text-align: center; 
+    padding: 20px;
 }
 
 .subtitle { 
@@ -81,6 +112,12 @@ footer {
     .image {
         padding: 5px;
     }
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 
