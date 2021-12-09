@@ -33,7 +33,7 @@ nav {
 }
 
 .review-header {
-    background-color: rgb(243, 241, 241);
+    background-color:rgb(218, 234, 240);
     padding: 5px;
     border-radius: 8px;
 }
@@ -120,12 +120,10 @@ ul {
     padding: 0;
 }
 
-form {
+.auth-form {
     margin: auto; 
-    margin-bottom: 25px;
     padding: 0px;
     width: 30%;
-    height: 100%;
     background-color:rgb(218, 234, 240);
     border-radius: 8px;
     padding: 30px;
@@ -134,6 +132,16 @@ form {
 .form-title {
     text-align: center;
     padding-bottom: 5px;
+}
+
+form {
+    background-color:rgb(218, 234, 240);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.search-form {
+    padding-top: 5px;
 }
 
 .btn {

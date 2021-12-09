@@ -1,10 +1,12 @@
 <div class='review-header'>
   <h1>All Reviews</h1>
-  <%= form_tag reviews_path, method: 'get' do %>
-    <%= label_tag(:search, "Search for:") %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag("Search") %>
-  <% end %>
+  <div class="search-form" > 
+    <%= form_tag reviews_path, method: 'get' do %>
+      <%= label_tag(:search, "Search for:") %>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
   <br>
   <% if user_signed_in? %>
     <%= link_to "Submit New Review", new_review_path %>
