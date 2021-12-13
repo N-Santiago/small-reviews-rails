@@ -151,12 +151,25 @@ form {
     width: 185px;
   }
   
-  .btn:hover {
+.btn:hover {
     background-color: #008CBA;
     color: white;
     width: 185px;
-  }
+}
 
+select {
+    position: absolute;
+    background-color: white; 
+    color: black; 
+    z-index: 1;
+    text-decoration: none;
+    display: block;
+}
+
+select:hover {
+    background-color: #008CBA;
+    color: white;
+}
 
 
 

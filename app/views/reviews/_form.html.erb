@@ -16,7 +16,7 @@
     <%= f.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="field" >  
     <%= f.label :category %><br>
     <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %>
   </div>  
@@ -27,6 +27,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn" %>
   </div>
 <% end %>
