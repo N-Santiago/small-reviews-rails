@@ -16,7 +16,7 @@
     "node-forge": "^1.0.0",
     "nth-check": "^1.0.2",
     "popper.js": "^1.16.1",
-    "postcss": "^7.0.36",
+    "postcss": "^8.2.13",
     "serialize-javascript": "^4.0.0",
     "set-value": "^4.1.0",
     "turbolinks": "^5.2.0",
