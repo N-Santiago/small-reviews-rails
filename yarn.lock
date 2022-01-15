@@ -4318,10 +4318,10 @@
   "resolved" "https://registry.npmjs.org/node-forge/-/node-forge-0.10.0.tgz"
   "version" "0.10.0"
 
-"node-forge@^1.0.0":
-  "integrity" "sha512-ShkiiAlzSsgH1IwGlA0jybk9vQTIOLyJ9nBd0JTuP+nzADJFLY0NoDijM2zvD/JaezooGu3G2p2FNxOAK6459g=="
-  "resolved" "https://registry.npmjs.org/node-forge/-/node-forge-1.0.0.tgz"
-  "version" "1.0.0"
+"node-forge@^1.2.1":
+  "integrity" "sha512-Fcvtbb+zBcZXbTTVwqGA5W+MKBj56UjVRevvchv5XrcyXbmNdesfZL37nlcWOfpgHhgmxApw3tQbTr4CqNmX4w=="
+  "resolved" "https://registry.npmjs.org/node-forge/-/node-forge-1.2.1.tgz"
+  "version" "1.2.1"
 
 "node-libs-browser@^2.2.1":
   "integrity" "sha512-h/zcD8H9kaDZ9ALUWwlBUDo6TKF8a7qBSCSEGfjTVIYeqsioSKaAX+BN7NgiMGp6iSIXZ3PxgCu8KS3b71YK5Q=="
