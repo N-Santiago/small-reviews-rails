@@ -1,21 +1,25 @@
-<div class='review-header'>
-  <h1>Genre: <%= @category.name %></h1>
-  <br>
-  <% if user_signed_in? %>
-    <%= link_to "Submit New Review", new_review_path %>
-  <% else %>
-    <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
-  <% end %>
-  <br>
-</div>
-<ul>
-<% @category.reviews.each do |review| %>
-  <div class='review'>
-    <p><li><strong><%= link_to review.title, review_path(review) %></strong></br> 
-    <small>Submitted by: <%= link_to review.user.username, user_path(review.user.id) %></small>
-    <p><%=review.content %></p>
-    <small>Created: <%=review.created_at %></small> <small>Updated: <%=review.updated_at %></small>
-    </li>
+<% if @category.present? %>
+  <div class='review-header'>
+    <h1>Genre: <%= @category.name %></h1>
+    <br>
+    <% if user_signed_in? %>
+      <%= link_to "Submit New Review", new_review_path %>
+    <% else %>
+      <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
+    <% end %>
+    <br>
   </div>
-<%end%>
-</ul>
+  <ul>
+  <% @category.reviews.each do |review| %>
+    <div class='review'>
+      <p><li><strong><%= link_to review.title, review_path(review) %></strong></br> 
+      <small>Submitted by: <%= link_to review.user.username, user_path(review.user.id) %></small>
+      <p><%=review.content %></p>
+      <small>Created: <%=review.created_at %></small> <small>Updated: <%=review.updated_at %></small>
+      </li>
+    </div>
+  <%end%>
+  </ul>
+<% else %>
+  <h1>Genre Doesn't Exist</h1>
+<% end %>
