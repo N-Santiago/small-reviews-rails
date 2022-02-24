@@ -5,6 +5,7 @@ class Review < ApplicationRecord
     has_many :comments, dependent: :destroy 
     # dependent: :destroy means the comments related 
     # to the specific review in mention get deleted if the post does.
+    validates :id, presence: true 
     has_many :users, through: :comments
     validates :title, presence: true, length: { in: 3..35 }
     validates :content, presence: true, length: { maximum: 250 }

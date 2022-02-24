@@ -1,12 +1,12 @@
-<h1>Reviewers</h1>
-<br>
-<% if user_signed_in? %>
-  <%= link_to "Submit New Review", new_review_path %>
-<% else %>
-  <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
-<% end %>
-<br>
-<br>
+<div class='review-header'>
+  <h1>Reviewers</h1>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to "Submit New Review", new_review_path %>
+  <% else %>
+    <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
+  <% end %>
+</div>
 <ul>
   <% User.all.each do |user| %>
     <p><li><strong><%= link_to user.username, user_path(user.id) %></strong></li></p>

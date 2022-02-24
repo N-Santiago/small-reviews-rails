@@ -1,4 +1,5 @@
-<div class='review-header'>
+ <% if @review.present? %>
+ <div class='review-header'>
   <h1>Small Review by: <%= @review.user.username %></h1>
   <% if user_signed_in? && (current_user.wrote_this(@review) || current_user.admin) %>
     <%= link_to "Edit Review", edit_review_path %> |
@@ -32,5 +33,8 @@
   <%= render partial: 'reviews/comment', collection: @review.comments %>
   <% end %>
 </div>
+<% else %>
+  <h1>Review Doesn't Exist</h1>
+<% end %>
 
 
