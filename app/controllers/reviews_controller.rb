@@ -2,6 +2,8 @@ require 'pry'
 class ReviewsController < ApplicationController
     before_action :set_review, only: [:show, :edit, :update, :destroy]
     before_action :authorize!, only: [:edit, :destroy]
+
+    rescue_from ActiveRecord::RecordNotFound, with: :not_found
     
     def index
       if params[:search]
@@ -52,14 +54,20 @@ class ReviewsController < ApplicationController
     private
 
       def set_review
-        @review = Review.find_by(id: params[:id])
-    end 
-  
+        @review = Review.find(params[:id])
+      end 
+
       def review_params
         params.require(:review).permit(:title, :content, :category_id, :search)
       end
 
       def authorize! 
         authorize @review #authorize method using the Pundit gem
-    end 
+      end 
+
+      def not_found
+        # renders app/reviews/not_found.html.erb
+        render :not_found, 
+          status: :not_found
+      end 
 end

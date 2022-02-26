@@ -1,40 +1,36 @@
- <% if @review.present? %>
-  <div class='review-header'>
-    <h1>Small Review by: <%= @review.user.username %></h1>
-    <% if user_signed_in? && (current_user.wrote_this(@review) || current_user.admin) %>
-      <%= link_to "Edit Review", edit_review_path %> |
-      <%= link_to 'Delete Review',  @review,  method: :delete, data: { confirm: 'Are you sure?' } %> 
-    <% end %>
-    <br>
-    <% if user_signed_in? %>
-      <%= link_to "Submit New Review", new_review_path %>
-    <% else %>
-      <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
-    <% end %>
-  </div><br/>
-  <div class='review'>
-    <h2><%= @review.title %></h2>
-    <small>Genre: <%= link_to @review.category.name, "genres/#{@review.category_id}" %></small> |
-    <small>Submitted by: <%= link_to @review.user.username, user_path(@review.user.id) %></small><br>
-    <br>
-    <p><%= @review.content %></p>
-    <small>Created: <%= @review.time_lapse(@review.created_at) %></small> 
-    <% if @review.updated_at != @review.created_at %>
-    | <small>Updated: <%= @review.time_lapse(@review.updated_at) %></small>
-    <% end %>
-    <br>
-    <br>
-    <% if user_signed_in? %>
-    <%= render partial: 'comments/form' %>
-    <% end %>
-    <br>
-    <% if @review.comments.present? %>
-    <h6>Comments:</h6>
-    <%= render partial: 'reviews/comment', collection: @review.comments %>
-    <% end %>
-  </div>
+<div class='review-header'>
+  <h1>Small Review by: <%= @review.user.username %></h1>
+  <% if user_signed_in? && (current_user.wrote_this(@review) || current_user.admin) %>
+    <%= link_to "Edit Review", edit_review_path %> |
+    <%= link_to 'Delete Review',  @review,  method: :delete, data: { confirm: 'Are you sure?' } %> 
+  <% end %>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to "Submit New Review", new_review_path %>
   <% else %>
-    <h1>Review Doesn't Exist</h1>
-<% end %>
+    <strong>Everyone can join, <%= link_to "Sign Up", new_user_registration_path %> to share your small reviews.</strong>
+  <% end %>
+</div><br/>
+<div class='review'>
+  <h2><%= @review.title %></h2>
+  <small>Genre: <%= link_to @review.category.name, "genres/#{@review.category_id}" %></small> |
+  <small>Submitted by: <%= link_to @review.user.username, user_path(@review.user.id) %></small><br>
+  <br>
+  <p><%= @review.content %></p>
+  <small>Created: <%= @review.time_lapse(@review.created_at) %></small> 
+  <% if @review.updated_at != @review.created_at %>
+  | <small>Updated: <%= @review.time_lapse(@review.updated_at) %></small>
+  <% end %>
+  <br>
+  <br>
+  <% if user_signed_in? %>
+  <%= render partial: 'comments/form' %>
+  <% end %>
+  <br>
+  <% if @review.comments.present? %>
+  <h6>Comments:</h6>
+  <%= render partial: 'reviews/comment', collection: @review.comments %>
+  <% end %>
+</div>
 
 
