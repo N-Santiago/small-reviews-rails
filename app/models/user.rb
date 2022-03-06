@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   validates :username, presence: true
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :categories, through: :reviews
-  has_many :comments
-  has_many :commented_posts, through: :comments  
+  has_many :comments, dependent: :destroy  
+  has_many :commented_posts, through: :comments
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, :omniauth_providers => [:twitter]
