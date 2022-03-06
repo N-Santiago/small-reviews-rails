@@ -315,7 +315,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection
   omniauth-twitter
   pry
-  puma (>= 5.5.1)
+  puma (>= 5.6.2)
   pundit
   rails (~> 6.1.4, >= 6.0.4.6)
   redis (~> 4.0)
