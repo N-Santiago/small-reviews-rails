@@ -145,7 +145,7 @@ form {
     color: black; 
     border: 2px solid #008CBA;
     width: 185px;
-  }
+}
   
 .btn:hover {
     background-color: #008CBA;
@@ -165,6 +165,10 @@ select {
 select:hover {
     background-color: #008CBA;
     color: white;
+}
+
+.dlt-link:hover {
+    color: rgb(240, 35, 35)
 }
 
 

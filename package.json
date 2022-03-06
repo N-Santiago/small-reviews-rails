@@ -4,7 +4,7 @@
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
-    "@rails/ujs": "^6.0.0",
+    "@rails/ujs": "^7.0.2-2",
     "@rails/webpacker": "^5.4.2",
     "ansi-regex": "^6.0.1",
     "bootstrap": "^4.5.0",
@@ -19,8 +19,10 @@
     "postcss": "^8.2.13",
     "serialize-javascript": "^4.0.0",
     "set-value": "^4.1.0",
+    "sweetalert2": "^11.4.4",
     "turbolinks": "^5.2.0",
     "watchpack": "^1.7.5",
+    "webpack": "^4.46.0",
     "y18n": "^4.0.0"
   },
   "version": "0.1.0",

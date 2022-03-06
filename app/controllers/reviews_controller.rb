@@ -66,7 +66,6 @@ class ReviewsController < ApplicationController
       end 
 
       def not_found
-        # renders app/reviews/not_found.html.erb
         render :not_found, 
           status: :not_found
       end 

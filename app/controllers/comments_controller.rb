@@ -17,6 +17,9 @@ class CommentsController < ApplicationController
         redirect_to review_path(@comment.review)
     end
 
+    # def show
+    # end 
+
     def edit
     end 
 
