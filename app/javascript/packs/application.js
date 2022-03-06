@@ -12,10 +12,10 @@ import "bootstrap"
 // import ".../stylesheets/application"
 import '../sweet-alert-confirm';
 
-document.addEventListener("turbolinks:load", () => {
-    $('[data-toggle="tooltip"]').tooltip()
-    $('[data-toggle="tooltip"]').popover()
-})
+// document.addEventListener("turbolinks:load", () => {
+//     $('[data-toggle="tooltip"]').tooltip()
+//     $('[data-toggle="tooltip"]').popover()
+// })
 
 
 
