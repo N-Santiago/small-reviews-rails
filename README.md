@@ -1,7 +1,7 @@
 # README
 
 # Small Reviews :movie_camera: :clapper:
-This Ruby on Rails <img src="https://img.icons8.com/windows/20/000000/ruby-on-rails.png"/> project is inspired by my own movie blog at the time, The Small Reviews with the intention of moving forward in the Flatiron School curriculum and turning a social media blog into a fun to use web app with a community of film :film_strip: and pop culture lovers. 
+This Ruby on Rails <img src="https://img.icons8.com/windows/24/000000/ruby-on-rails.png"/> project is inspired by my own movie blog at the time, The Small Reviews with the intention of moving forward in the Flatiron School curriculum and turning a social media blog into a fun to use web app with a community of film :film_strip: and pop culture lovers. 
 
 ## Setup
 These are the steps to get the app up and running:
