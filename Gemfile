@@ -23,6 +23,7 @@ gem 'redis', '~> 4.0'
 gem 'bcrypt', '~> 3.1.7'
 gem "nokogiri", ">= 1.12.5"
 # Use Active Storage variant
+gem "activestorage", ">= 6.1.4.7"
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
